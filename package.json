@@ -1,0 +1,29 @@
+{
+  "name": "owlhobby",
+  "version": "1.0.0",
+  "description": "Application to find someone to share a hobby with",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gilpop8663/owlHobby.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gilpop8663/owlHobby/issues"
+  },
+  "homepage": "https://github.com/Gilpop8663/owlHobby#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "nodemon": "^2.0.12"
+  }
+}
