@@ -1,0 +1,34 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        title #{pageTitle} | Owl Hobby
+    body
+        header 
+            nav
+                ul 
+                    li 
+                        a(href="/") 홈으로 
+                    li 
+                        a(href="/search") 검색하기
+                    li
+                        a(href="/join") 회원가입 
+                    if loggedIn
+                        li 
+                            a(href="/logout") 로그아웃
+                        li
+                            a(href="/posting/upload") 게시글 올리기
+                        li 
+                            a(href="/my-profile") #{loggedInUser.nickname} 의 프로필
+                    else 
+                        li 
+                            a(href="/login") 로그인
+                        li
+                            a(href="/join") 회원가입 
+
+                    
+        main 
+            block content
+    include partials/footer

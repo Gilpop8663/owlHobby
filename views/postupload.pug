@@ -1,0 +1,12 @@
+extends base
+
+block content 
+    if errorMessage 
+        h4=errorMessage
+    h4 게시글 올리기
+    form(method="POST")
+        input(type="text" , placeholder="게시글 제목" ,name="title", maxlength="100") 
+        input(type="text" , placeholder="만날 장소" ,name="location", maxlength="100") 
+        input(type="text" , placeholder="만날 시간" ,name="meetTime", maxlength="100") 
+        input(type="text" , placeholder="요구 사항" ,name="requirements", maxlength="200") 
+        input(type="submit",value="올리기")

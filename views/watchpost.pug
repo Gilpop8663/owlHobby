@@ -1,0 +1,12 @@
+extends base
+
+block content 
+        h3 제목 : #{post.title}
+        h3 지역 : #{post.location}
+        h3 만날 시간 : #{post.meetTime}
+        h3 요구사항 : #{post.requirements}
+        h3 댓글 : #{post.comments}
+        h3 조회수 : #{post.meta.views}
+        h3 좋아요 : #{post.meta.like}
+        a(href=`${post.id}/edit`) 게시글 수정하기
+        a(href=`${post.id}/delete`) 게시글 삭제하기

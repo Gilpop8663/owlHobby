@@ -1,0 +1,13 @@
+extends base
+include mixins/posting
+
+block content 
+    h1 검색창입니다
+    form(method="GET")
+        input(type="search" , placeholder="검색어를 입력해주세요" , name = "keyword")
+        input(type="submit", value="검색") 
+    
+    each potato in post
+        +posting(potato)
+    else 
+        h1 검색결과가 없습니다.

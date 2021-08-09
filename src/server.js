@@ -1,22 +1,39 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import morgan from "morgan";
 import globalRouter from "./router/globalRouter";
 import postingRouter from "./router/postingRouter";
 import userRotuer from "./router/userRouter";
-
-const PORT = 4000;
+import session from "express-session";
+import { localsMiddleware } from "./middlewares";
 
 const app = express();
 const logger = morgan("dev");
 
-const handleServerOpen = console.log(
-  "서버가 포트 4000에 정상적으로 열렸습니다.🎐"
-);
+app.set("view engine", "pug");
+
+app.set("views", process.cwd() + "/src/views");
 
 app.use(logger);
+app.use(urlencoded({ extended: true }));
+
+app.use(
+  session({
+    secret: "Hello!",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+app.use((req, res, next) => {
+  req.sessionStore.all((error, sessions) => {
+    next();
+  });
+});
+
+app.use(localsMiddleware);
 
 app.use("/", globalRouter);
 app.use("/posting", postingRouter);
 app.use("/user", userRotuer);
 
-app.listen(PORT, handleServerOpen);
+export default app;

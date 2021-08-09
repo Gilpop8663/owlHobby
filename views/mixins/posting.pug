@@ -1,0 +1,11 @@
+mixin posting(info)
+    div 
+        h4 
+            a(href=`/posting/${info.id}`)=info.title
+        ul 
+            li 지역 : #{info.location}
+            li 만날 시간 : #{info.meetTime}
+            li 요구사항 : #{info.requirements}
+            li 댓글 : #{info.comments}
+            li 조회수 : #{info.meta.views}
+            li 좋아요 : #{info.meta.like}

@@ -1,0 +1,67 @@
+extends base
+
+block content 
+    h3 회원가입
+    if(errorMessage)
+        h3=errorMessage
+    form(method="POST")
+        div 
+            input(type="radio" ,id="genderChoice1",name="gender",value="남자") 
+            label(for="genderChoice1") 남자 
+            input(type="radio" ,id="genderChoice2",name="gender",value="여자") 
+            label(for="genderChoice2") 여자 
+        div 
+            span 이메일
+            input(type="email",name="email",placeholder="이메일을 입력해주세요")
+        div 
+            span 비밀번호
+            input(type="password",name="password",placeholder="암호를 입력해주세요")
+            input(type="password",name="password2",placeholder="다시 암호를 입력해주세요")
+        div 
+            span 생년월일
+            input(type="date",name="birthDate")
+        div 
+            span 지역
+            input(type="text",name="location",placeholder="사는 지역을 입력해주세요")
+        div 
+            span 닉네임
+            input(type="text",name="nickname",placeholder="닉네임을 입력해주세요")
+        div 
+            span 키
+            input(type="number",name="height",placeholder="키를 입력해주세요")
+        div 
+            span 혈액형
+            input(type="radio",name="bloodType",value="A형",id="bloodChoice1")
+            label(for="bloodChoice1") A형
+            input(type="radio",name="bloodType",value="B형",id="bloodChoice2")
+            label(for="bloodChoice2") B형
+            input(type="radio",name="bloodType",value="O형",id="bloodChoice3")
+            label(for="bloodChoice3") O형
+            input(type="radio",name="bloodType",value="AB형",id="bloodChoice4")
+            label(for="bloodChoice4") AB형
+        div 
+            span 종교
+            input(type="text",name="religion",placeholder="종교를 입력해주세요")
+        div 
+            span 흡연
+            input(type="radio",name="smoking",value="흡연",id="smokingChoice1")
+            label(for="smokingChoice1") 흡연
+            input(type="radio",name="smoking",value="비흡연",id="smokingChoice2")
+            label(for="smokingChoice2") 비흡연
+        div 
+            span 주량
+            input(type="text",name="drinking",placeholder="주량을 입력해주세요")
+        div 
+            span 직업
+            input(type="text",name="job",placeholder="직업을 입력해주세요")
+        div 
+            span 성격
+            input(type="text",name="personality",placeholder="성격을 입력해주세요")
+        div
+            span 취미
+            input(type="text",name="hobby",placeholder="취미를 입력해주세요")
+        input(type="submit",value="회원가입") 
+
+    hr
+    h3 이미 계정을 가지고 계신가요? &rarr; 
+        a(href="/login") 로그인

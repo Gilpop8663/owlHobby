@@ -22,7 +22,7 @@ Ex. -
 
 - [express](https://expressjs.com/ko/)
 
-- [react](https://ko.reactjs.org/)
+- [pug](https://pugjs.org/api/getting-started.html)
 
 ## Features
 
