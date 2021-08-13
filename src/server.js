@@ -5,6 +5,7 @@ import postingRouter from "./router/postingRouter";
 import userRotuer from "./router/userRouter";
 import session from "express-session";
 import { localsMiddleware } from "./middlewares";
+import MongoStore from "connect-mongo";
 
 const app = express();
 const logger = morgan("dev");
@@ -18,9 +19,12 @@ app.use(urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: "Hello!",
-    resave: true,
-    saveUninitialized: true,
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.DB_URL,
+    }),
   })
 );
 
